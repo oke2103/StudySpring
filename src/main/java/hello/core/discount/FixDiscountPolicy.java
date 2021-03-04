@@ -1,16 +1,16 @@
-package hello.core.distinct;
+package hello.core.discount;
 
 import hello.core.member.Grade;
 import hello.core.member.Member;
 
-public class RateDiscountPolicy implements DiscountPolicy{
+public class FixDiscountPolicy implements DiscountPolicy{
 
-    private int discountPercent = 10;
+    private int distinctFixAmount = 1000;
 
     @Override
     public int discount(Member member, int price) {
         if(member.getGrade() == Grade.VIP){
-            return price * discountPercent / 100;
+            return distinctFixAmount;
         }
         else{
             return 0;
